@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var counter = 0;
-  var accessToken = 'EAACEdEose0cBAPHfkX4roey1SdUpkqotbre15dPU7noCDzp5ZA9Yug9HJJpysspmUoFHNug9WVmJh0H6evRghq3RyiZB5f0m92bZB4Kb0J7K7GWwDhJpFZCalAUZAzP4O0WcdBmtWyzgwZARhzWlrZCM4PL4lmkNpz6r76alp7v1zIGgKXDCxTAUamC2MZAH05gZD';
+  var accessToken = 'EAACEdEose0cBAGDGWiOogSUlKaVXwoW7AXZB8Us2S5Oe8jUK0QBbeWvmYQjJ0ipZAZCHZCdFG0aKY0RZBFldE8C0ehDZBamKSgMDDvqNZBQaIblkr5hFRsIZCpJIkiAZB0JwUs9KkJIGUxirgSB26HZBDVp8jtoqCtHYOi5egLiowQNAENviKc73nyC1ypJ5LWHi0ZD';
   //function returning 'posts' as jqXHR object by making request to GRAPH API using getJSON method
   function get_Feed(Token){
     return $.getJSON("https://graph.facebook.com/me/posts?fields=id,message,permalink_url,picture,link,name,likes{pic,username,name,link},comments{id,from{id, name, picture},message},created_time,full_picture,place&access_token=" + Token);
