@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PROFILE">
+    <meta name="author" content="Varun">
+
+    <title>Profile_FB</title>
+
+    <!---Importing Font ---->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!-- Bootstrap minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <div class= "container">
+      <div class="row">
+        <div class="img-holder col-md-4 col-xs-12">
+        </div>
+        <div class="info col-md-8 col-xs-12">
+          <p id="toFeed" title="Check Feed"><a href="Feed.html" target="_blank"><i class="fa fa-rss fa-2x anim" aria-hidden="true"></i></a></p>
+          <div id="loaded-info">
+            <blockquote class="blockquote"> <h1 id="name"></h1><sub><span id="age"></span> years old</sub></blockquote>
+            <p id="general">From <span id="from"></span>,
+                graduated from <span id="college"></span>,
+                currently living in <span id="loc"></span>
+                and working at <span id="work"></span>
+            </p>
+            <blockquote class="blockquote-reverse"> <p id="ab"></p> </blockquote>
+            <h5><i class="fa fa-envelope" aria-hidden="true"></i><br> <span id="email"></span></h5>
+          </div>
+          <div id="load-fail">
+            <h1><i class="fa fa-ban" aria-hidden="true"></i>NO INFO</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- loader -->
+    <div class="container-1">
+        <div class="spin spin-1"></div>
+    </div>
+    <!---Importing Icons ---->
+    <script src="https://use.fontawesome.com/7d3906fbc4.js"></script>
+    <script src="https://use.fontawesome.com/7d3906fbc4.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!---Custom JS file ---->
+    <script src="var.js"></script>
+  </body>
+</html>
