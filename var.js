@@ -4,7 +4,7 @@ $(document).ready(function(){
   //aboutText going to hold jqxhr object returned for get about request
   var aboutText;
   //
-  var accessToken = 'EAACEdEose0cBAPHfkX4roey1SdUpkqotbre15dPU7noCDzp5ZA9Yug9HJJpysspmUoFHNug9WVmJh0H6evRghq3RyiZB5f0m92bZB4Kb0J7K7GWwDhJpFZCalAUZAzP4O0WcdBmtWyzgwZARhzWlrZCM4PL4lmkNpz6r76alp7v1zIGgKXDCxTAUamC2MZAH05gZD';
+  var accessToken = 'EAACEdEose0cBAGDGWiOogSUlKaVXwoW7AXZB8Us2S5Oe8jUK0QBbeWvmYQjJ0ipZAZCHZCdFG0aKY0RZBFldE8C0ehDZBamKSgMDDvqNZBQaIblkr5hFRsIZCpJIkiAZB0JwUs9KkJIGUxirgSB26HZBDVp8jtoqCtHYOi5egLiowQNAENviKc73nyC1ypJ5LWHi0ZD';
   //function returning 'basic info' as jqXHR object by making request to GRAPH API using getJSON method
   function get_Info(Token){
     return $.getJSON("https://graph.facebook.com/me?fields=hometown,email,about,birthday,education,name,location,work&access_token=" + Token);
@@ -20,13 +20,6 @@ $(document).ready(function(){
     return $.getJSON("https://graph.facebook.com/me?about&access_token=" + Token);
   }
 
-  //function returning 'posts info' as jqXHR object by making request to GRAPH API
-  /*function get_Feed(Token){
-    return $.ajax("https://graph.facebook.com/me/posts?fields=id,message,permalink_url,picture,link,name,likes{name,link},comments{id,from{id, name},message},created_time,full_picture,place&access_token=" + Token,
-    {
-      timeout: 5000;
-    });
-  }*/
 
 
   //profile will hold the jqXHR object which can use promise methods
@@ -123,17 +116,6 @@ Latest work details at [0] */
       alert('about section couldnt be get');
     });
 
-
-
-
-  /*var feed = get_Feed(accessToken);
-
-  feed.done(function(data){
-    console.log("number of posts " + data.data.length);
-    console.log("latest post created on " + data.data[0].created_time);
-    console.log("it got this many likes " + data.data[0].likes.data.length);
-
-  });*/
 
 
   //stoping animation once user goes to feed page
