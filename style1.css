@@ -26,11 +26,13 @@ html, body{
 #onClick{
   text-align: center;
   color: rgba(73,78,107,0.9);
+  margin-bottom: 10px;
 }
 
 #goTop{
   text-align: center;
   display: none;
+  margin-bottom: 10px;
 }
 
 #goTop a{
