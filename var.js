@@ -4,7 +4,7 @@ $(document).ready(function(){
   //aboutText going to hold jqxhr object returned for get about request
   var aboutText;
   //
-  var accessToken = 'EAACEdEose0cBAGDGWiOogSUlKaVXwoW7AXZB8Us2S5Oe8jUK0QBbeWvmYQjJ0ipZAZCHZCdFG0aKY0RZBFldE8C0ehDZBamKSgMDDvqNZBQaIblkr5hFRsIZCpJIkiAZB0JwUs9KkJIGUxirgSB26HZBDVp8jtoqCtHYOi5egLiowQNAENviKc73nyC1ypJ5LWHi0ZD';
+  var accessToken = 'EAACEdEose0cBAFKDilvYeN5SDp2mtoTQ0ZAZC6OicF30lms2npPiaKroArIwQJSuw0SDs9GGEPWnLo0HL39uCsUosMprioFwgwLxmaONr9Ba9wZB1TVfr5mgIMv67WkUc3teZCUcAyzZBCKKb6JpdQoKILaT3CtDyZBMf7mZBnhiWrZAFoBVplhE67kNv2A3gfUZD';
   //function returning 'basic info' as jqXHR object by making request to GRAPH API using getJSON method
   function get_Info(Token){
     return $.getJSON("https://graph.facebook.com/me?fields=hometown,email,about,birthday,education,name,location,work&access_token=" + Token);
@@ -110,10 +110,11 @@ Latest work details at [0] */
       //about me section
       if(abText.bio != undefined)
         $("#ab").text(abText.bio);
-      $(".container-1").css('display','none');
     }).fail(function(){
-      //console.log("about get fail");
-      alert('about section couldnt be get');
+        alert('about section couldnt be get');
+    }).always(function(){
+      //removing loader in both done and fail cases
+      $(".container-1").css('display','none');
     });
 
 

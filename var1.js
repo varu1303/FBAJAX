@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var counter = 0;
-  var accessToken = 'EAACEdEose0cBAGDGWiOogSUlKaVXwoW7AXZB8Us2S5Oe8jUK0QBbeWvmYQjJ0ipZAZCHZCdFG0aKY0RZBFldE8C0ehDZBamKSgMDDvqNZBQaIblkr5hFRsIZCpJIkiAZB0JwUs9KkJIGUxirgSB26HZBDVp8jtoqCtHYOi5egLiowQNAENviKc73nyC1ypJ5LWHi0ZD';
+  var accessToken = 'EAACEdEose0cBAFKDilvYeN5SDp2mtoTQ0ZAZC6OicF30lms2npPiaKroArIwQJSuw0SDs9GGEPWnLo0HL39uCsUosMprioFwgwLxmaONr9Ba9wZB1TVfr5mgIMv67WkUc3teZCUcAyzZBCKKb6JpdQoKILaT3CtDyZBMf7mZBnhiWrZAFoBVplhE67kNv2A3gfUZD';
   //function returning 'posts' as jqXHR object by making request to GRAPH API using getJSON method
   function get_Feed(Token){
     return $.getJSON("https://graph.facebook.com/me/posts?fields=id,message,permalink_url,picture,link,name,likes{pic,username,name,link},comments{id,from{id, name, picture},message},created_time,full_picture,place&access_token=" + Token);
@@ -23,8 +23,6 @@ $(document).ready(function(){
       $("#post").append("<div id='x"+x+"'>"+isPost+"<p>Created on "+feed.data[i].created_time.substr(0,10)+"</p><p>Number of likes "+likeCount+"</p><p><a href="+ feed.data[i].permalink_url +" target='_blank'>Post "+ x +"</a></p></div>");
       if(counter%4 == 0){
           console.log("broke at" + i);
-          //everything loaded - removing loader
-          $(".container-1").css('display','none');
           return false;
       }
     });
@@ -34,6 +32,8 @@ $(document).ready(function(){
       $("#load-fail").css('display','block');
   }).always(function(){
     $("[id^=x]").addClass("backcolor");
+    //everything loaded - removing loader
+    $(".container-1").css('display','none');
   });
 
   $("#onClick").on('click',function(){
