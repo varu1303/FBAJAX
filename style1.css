@@ -102,6 +102,7 @@ html, body{
 
 @media only screen and (min-width: 768px){
   .post-in{
+    margin-top:5px;
     display:flex;
     justify-content: space-around;
   }
@@ -112,7 +113,7 @@ html, body{
     border: 2px black solid;
   }
   .backcolor-1{
-    flex-basis: 30%;
+    flex-basis: 33%;
     order:1;
     border: 2px black solid;
   }
@@ -122,6 +123,10 @@ html, body{
 }
 
 @media only screen and (max-width :767px){
+
+ .post-in{
+    margin-top:5px;
+  }
     .formar{
     margin-top: 2%;
   }
