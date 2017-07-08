@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var counter = 0;
-  var accessToken = 'EAACEdEose0cBAFKDilvYeN5SDp2mtoTQ0ZAZC6OicF30lms2npPiaKroArIwQJSuw0SDs9GGEPWnLo0HL39uCsUosMprioFwgwLxmaONr9Ba9wZB1TVfr5mgIMv67WkUc3teZCUcAyzZBCKKb6JpdQoKILaT3CtDyZBMf7mZBnhiWrZAFoBVplhE67kNv2A3gfUZD';
+  var accessToken = 'EAACEdEose0cBAPLphOYH3pgnntADKZAdibJcMiZBuf4owyDd4Dfg1Qfmq4DzHuhYDZBswhu72McJVmgbAOX4b9HAlvXy6P3rxsEGHk9zUIf5P1LQxN8tZBhZBixtc9PhXpFr4nPloXo90D86yQPDhHor0L2gvmRE3ERfvHXe40ISR0eOe6QsijoxnE4eDLfMZD';
   //function returning 'posts' as jqXHR object by making request to GRAPH API using getJSON method
   function get_Feed(Token){
     return $.getJSON("https://graph.facebook.com/me/posts?fields=id,message,permalink_url,picture,link,name,likes{pic,username,name,link},comments{id,from{id, name, picture},message},created_time,full_picture,place&access_token=" + Token);
@@ -20,7 +20,9 @@ $(document).ready(function(){
        likeCount=0;
        else
         likeCount = feed.data[i].likes.data.length;
-      $("#post").append("<div id='x"+x+"'>"+isPost+"<p>Created on "+feed.data[i].created_time.substr(0,10)+"</p><p>Number of likes "+likeCount+"</p><p><a href="+ feed.data[i].permalink_url +" target='_blank'>Post "+ x +"</a></p></div>");
+      $("#post").append("<div id='inner"+x+"'class='post-in'></div>");
+      $("#inner"+x).append("<div id='xx"+x+"'><a href="+ feed.data[i].permalink_url +" target='_blank'>"+isPost+"</a></div>");
+      $("#inner"+x).append("<div id='xy"+x+"'><p class='formar'>Created on "+feed.data[i].created_time.substr(0,10)+"</p><p>Number of likes : "+likeCount+"</p><p><a href="+ feed.data[i].permalink_url +" target='_blank'><i class='fa fa-facebook' aria-hidden='true'></i></a</p></div>");
       if(counter%4 == 0){
           console.log("broke at" + i);
           return false;
@@ -31,7 +33,8 @@ $(document).ready(function(){
       $("#onClick").css('display','none');
       $("#load-fail").css('display','block');
   }).always(function(){
-    $("[id^=x]").addClass("backcolor");
+    $("[id^=xx]").addClass("backcolor");
+    $("[id^=xy]").addClass("backcolor-1");
     //everything loaded - removing loader
     $(".container-1").css('display','none');
   });
@@ -48,7 +51,9 @@ $(document).ready(function(){
               likeCount=0;
             else
               likeCount = feed.data[i].likes.data.length;
-            $("#post").append("<div id='x"+x+"'>"+isPost+"<p>Created on "+feed.data[i].created_time.substr(0,10)+"</p><p>Number of likes "+likeCount+"</p><p><a href="+ feed.data[i].permalink_url +" target='_blank'>Post "+ x +"</a></p></div>");
+              $("#post").append("<div id='inner"+x+"'class='post-in'></div>");
+              $("#inner"+x).append("<div id='xx"+x+"'><a href="+ feed.data[i].permalink_url +" target='_blank'>"+isPost+"</a></div>");
+              $("#inner"+x).append("<div id='xy"+x+"'><p class='formar'>Created on "+feed.data[i].created_time.substr(0,10)+"</p><p>Number of likes : "+likeCount+"</p><p><a href="+ feed.data[i].permalink_url +" target='_blank'><i class='fa fa-facebook' aria-hidden='true'></i></a</p></div>");
           }
           if (i>=feed.data.length){
             $("#onClick").css('display','none');
@@ -60,7 +65,8 @@ $(document).ready(function(){
             $("#onClick").css('display','none');
             $("#load-fail").css('display','block');
         }).always(function(){
-          $("[id^=x]").addClass("backcolor");
+          $("[id^=xx]").addClass("backcolor");
+          $("[id^=xy]").addClass("backcolor-1");
         });
       });
 

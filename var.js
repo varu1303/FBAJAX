@@ -4,7 +4,7 @@ $(document).ready(function(){
   //aboutText going to hold jqxhr object returned for get about request
   var aboutText;
   //
-  var accessToken = 'EAACEdEose0cBAFKDilvYeN5SDp2mtoTQ0ZAZC6OicF30lms2npPiaKroArIwQJSuw0SDs9GGEPWnLo0HL39uCsUosMprioFwgwLxmaONr9Ba9wZB1TVfr5mgIMv67WkUc3teZCUcAyzZBCKKb6JpdQoKILaT3CtDyZBMf7mZBnhiWrZAFoBVplhE67kNv2A3gfUZD';
+  var accessToken = 'EAACEdEose0cBAPLphOYH3pgnntADKZAdibJcMiZBuf4owyDd4Dfg1Qfmq4DzHuhYDZBswhu72McJVmgbAOX4b9HAlvXy6P3rxsEGHk9zUIf5P1LQxN8tZBhZBixtc9PhXpFr4nPloXo90D86yQPDhHor0L2gvmRE3ERfvHXe40ISR0eOe6QsijoxnE4eDLfMZD';
   //function returning 'basic info' as jqXHR object by making request to GRAPH API using getJSON method
   function get_Info(Token){
     return $.getJSON("https://graph.facebook.com/me?fields=hometown,email,about,birthday,education,name,location,work&access_token=" + Token);

@@ -9,14 +9,13 @@ html, body{
 
 
 .container{
-  width:98%;
- background-color: white;
- margin-top: 10px;
+  width:100%;
+ background-color: rgba(73,78,107,0.5);
 }
 
 
 #head{
-  color:rgba(73,78,107,0.9);
+  color:white;
   padding: 20px;
   text-align: center;
   position: relative;
@@ -25,14 +24,15 @@ html, body{
 
 #onClick{
   text-align: center;
-  color: rgba(73,78,107,0.9);
-  margin-bottom: 10px;
+  color:white;
+  padding:20px;
 }
 
 #goTop{
   text-align: center;
   display: none;
-  margin-bottom: 10px;
+  color:white;
+  padding:20px;
 }
 
 #goTop a{
@@ -48,34 +48,46 @@ html, body{
   animation-direction: alternate;
 }
 
-@keyframes top {
+/*@keyframes top {
   0%   { opacity: 0.5; }
   100% { opacity: 1; }
-}
+}*/
 
 #load-fail{
   display: none;
 }
 
 .backcolor{
-  background-color: rgba(73,78,107,0.9);
-  color: white;
+  background-color: white;
+  color: rgba(73,78,107,0.9);
   text-align: center;
   padding: 20px;
-  margin: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+}
+
+.backcolor-1{
+  background-color: white;
+  color: rgba(73,78,107,0.9);
+  text-align: center;
+  padding: 20px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
 }
 
 .backcolor a{
   text-decoration: none;
-  color: white;
+  color: rgba(73,78,107,0.9);
   font-size: 1.5em;
   font-weight: bolder;
-  border: 2px white solid;
+}
+
+.backcolor-1 a{
+  text-decoration: none;
+  color: rgba(73,78,107,0.9);
+  font-size: 1.5em;
+  font-weight: bolder;
   padding: 8px;
-  margin-bottom: 8px;
-  margin-Top: 15px;
 
 }
 
@@ -86,6 +98,40 @@ html, body{
   width: 300px;
 }
 
+/*media queries..................*/
+
+@media only screen and (min-width: 768px){
+  .post-in{
+    display:flex;
+    justify-content: space-around;
+  }
+
+  .backcolor{
+    flex-basis: 65%;
+    order:2;
+    border: 2px black solid;
+  }
+  .backcolor-1{
+    flex-basis: 30%;
+    order:1;
+    border: 2px black solid;
+  }
+  .formar{
+    margin-top: 40%;
+  }
+}
+
+@media only screen and (max-width :767px){
+    .formar{
+    margin-top: 2%;
+  }
+  .backcolor-1{
+    border-bottom: 2px black solid;
+  }
+  .backcolor{
+    border-top: 2px black solid;
+  }
+}
 
 @media only screen and (max-width :991px){
   .backcolor{
