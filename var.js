@@ -40,7 +40,7 @@ $(document).ready(function(){
     var old = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
     $("#age").text(old);
   }else {
-    $("#age").text("who cares");
+    $("#age").text("just a number");
   }
   console.log('later');
   //hometown name
